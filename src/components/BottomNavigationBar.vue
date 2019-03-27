@@ -42,7 +42,7 @@
   Typographic
   Visual
   */
-  @import "../assets/fonts/navigation_bar_iconfonts.css";
+  @import "../assets/fonts/iconfonts.css";
 
   .navigation-bar {
     position: fixed;
