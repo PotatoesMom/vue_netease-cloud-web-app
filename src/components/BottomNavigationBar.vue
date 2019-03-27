@@ -64,7 +64,7 @@
 
   .navigation-bar__item-icon,
   .navigation-bar__item-description {
-    font-size: 12px;
+    font-size: 1em;
     text-align: center;
     margin: 5px 0;
   }
