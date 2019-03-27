@@ -42,20 +42,19 @@
   Typographic
   Visual
   */
-  @import "../assets/fonts/iconfonts.css";
 
   .navigation-bar {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(245, 245, 245, 0.8);
   }
 
   .navigation-bar-container {
     display: flex;
     width: 100%;
     justify-content: space-between;
-    margin: 5px 0;
+    margin: 10px 0 5px 0;
   }
 
   .navigation-bar__item {
