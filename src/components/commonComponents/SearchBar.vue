@@ -1,7 +1,8 @@
 <template>
+<!--  功能未实现-->
   <div class="search-bar" :class="{'search-bar__searched': isFocus}">
     <div class="search-bar__container">
-      <div class="search-bar__iconfont">&#xe64c;</div>
+      <div class="search-bar__icon icon">&#xe64c;</div>
       <label>
         <input type="search" class="search-bar__search" @focus="runSearch()" :value="value">
       </label>
@@ -51,15 +52,9 @@
     border-radius: 20px;
   }
 
-  .search-bar__iconfont {
+  .search-bar__icon {
     width: 15%;
-    font-family: "iconfont", serif !important;
     font-size: 2em;
-    font-weight: lighter;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: .2px;
-    -moz-osx-font-smoothing: grayscale;
     color: #737373;
     padding-left: 10px;
   }
@@ -86,9 +81,9 @@
   }
 
   .search-bar__searched {
-    height: 100%;
     position: fixed;
     z-index: 1000;
+    height: 100%;
     background-color: white;
   }
 

@@ -1,8 +1,10 @@
 <template>
-  <div class="navigation-bar">
+  <div id="navigation-bar">
     <ul class="navigation-bar-container">
-      <li v-for="(navigationBarItem, index) in navigationBarItems" :key="index" class="navigation-bar__item" :class="{'navigation-bar__item--clicked': currentClicked[index]}">
-        <div class="navigation-bar__item-icon" @click="getIndex(index)"><span v-html="navigationBarItem.icon"></span></div>
+      <li v-for="(navigationBarItem, index) in navigationBarItems" :key="index" class="navigation-bar__item"
+          :class="{'navigation-bar__item--clicked': current[index]}">
+        <div class="navigation-bar__item-icon icon" @click="changeTab(index)"><span v-html="navigationBarItem.icon"></span>
+        </div>
         <div class="navigation-bar__item-description">{{ navigationBarItem.description }}</div>
       </li>
     </ul>
@@ -21,13 +23,30 @@
           "icon": "&#xe64b;",
           "description": "账户"
         }],
-        "currentClicked": [true, false, false, false]
+        "current": [false, false, false, false, false],
+        "routes": ["discovery", "video", "mine", "friends", "account"]
+      }
+    },
+    watch: {
+      '$route': function () {
+        let path = this.$route.path.slice(1);
+        let self = this;
+        self.routes.forEach(function (value, index) {
+          if (value === path) {
+            self.setCurrentTab(self, index);
+            return null;
+          }
+        })
       }
     },
     methods: {
-      getIndex: function (index) {
-        this.currentClicked = [false, false, false, false];
-        this.currentClicked[index] = true;
+      setCurrentTab: function (self, index) {
+        self.current = [false, false, false, false, false];
+        self.current[index] = true;
+      },
+      changeTab: function (index) {
+        this.setCurrentTab(this, index);
+        this.$router.push({ path: '/' + this.routes[index]});
       }
     }
   }
@@ -43,11 +62,12 @@
   Visual
   */
 
-  .navigation-bar {
+  #navigation-bar {
     position: fixed;
+    z-index: 100;
     bottom: 0;
     width: 100%;
-    background-color: rgba(245, 245, 245, 0.8);
+    background-color: rgba(245, 245, 245, 0.97);
   }
 
   .navigation-bar-container {
@@ -71,12 +91,7 @@
   .navigation-bar__item-icon {
     width: 34px;
     height: 34px;
-    font-family: "iconfont", serif !important;
     font-size: 22px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;
     padding: 5px 4px;
     margin: auto;
     border-radius: 17px;

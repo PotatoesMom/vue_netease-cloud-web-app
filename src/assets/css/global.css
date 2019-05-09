@@ -1,0 +1,22 @@
+html, body {
+  height: 100%;
+}
+
+.icon {
+  font-family: "iconfont", serif !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: .2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.song-list--description {
+  display: -webkit-box;
+  padding-top: 5px;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /*规定最多显示两行*/
+  overflow: hidden;
+  height: 30px;
+  color: #717171;
+}

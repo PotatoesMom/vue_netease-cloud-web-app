@@ -1,9 +1,12 @@
+/*字体文件*/
+/*使用iconfont提供的字体*/
+
 @font-face {
   font-family: 'iconfont';  /* project id 1109861 */
-  src: url('//at.alicdn.com/t/font_1109861_8bc8a4q4ms.eot');
-  src: url('//at.alicdn.com/t/font_1109861_8bc8a4q4ms.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_1109861_8bc8a4q4ms.woff2') format('woff2'),
-  url('//at.alicdn.com/t/font_1109861_8bc8a4q4ms.woff') format('woff'),
-  url('//at.alicdn.com/t/font_1109861_8bc8a4q4ms.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_1109861_8bc8a4q4ms.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_1109861_hjxvnjqp2ak.eot');
+  src: url('//at.alicdn.com/t/font_1109861_hjxvnjqp2ak.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1109861_hjxvnjqp2ak.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1109861_hjxvnjqp2ak.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1109861_hjxvnjqp2ak.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1109861_hjxvnjqp2ak.svg#iconfont') format('svg');
 }

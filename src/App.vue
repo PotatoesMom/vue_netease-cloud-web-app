@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Playing></Playing>
+    <router-view></router-view>
+    <BottomNavigationBar></BottomNavigationBar>
+    <Audio :play-id="playListData.currentPlayId"></Audio>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Playing from './components/commonComponents/Playing'
+  import BottomNavigationBar from './components/commonComponents/BottomNavigationBar'
+  import Audio from './components/commonComponents/Audio'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  export default {
+    name: 'app',
+    components: {
+      Playing,
+      BottomNavigationBar,
+      Audio
+    },
+    computed: {
+      playListData() {
+        return this.$store.state.playList;
+      },
+      currentTime() {
+        return this.$refs.audio.currentTime;
+      }
+    },
   }
-}
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    width: 100%;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 </style>
